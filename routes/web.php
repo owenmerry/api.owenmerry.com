@@ -50,9 +50,13 @@ Route::group(['prefix' => 'api2'], function () {
             return $request->session()->get('insta');
             return json_encode(Instagram::getUser());
         });
-        Route::get('/instagram/auth', ['as' => 'api.instagram.auth', 'uses' => 'PhotoController@auth']);
+
         Route::get('/instagram/accessToken', ['as' => 'api.instagram.accessToken', 'uses' => 'PhotoController@accessToken']);
         Route::get('/instagram/setAccessToken/{token}', ['as' => 'api.instagram.setAccessToken', 'uses' => 'PhotoController@setAccessToken']);
+
+        Route::get('/instagram/auth', ['as' => 'api.instagram.auth', 'uses' => 'PhotoController@auth']);
+        
+    
         Route::get('/instagram/user', ['as' => 'api.instagram.user', 'uses' => 'PhotoController@user']);
         Route::get('/instagram/me', ['as' => 'api.instagram.me', 'uses' => 'PhotoController@me']);
         Route::get('/instagram/media', ['as' => 'api.instagram.media', 'uses' => 'PhotoController@media']);
