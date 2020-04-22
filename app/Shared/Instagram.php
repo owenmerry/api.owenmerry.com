@@ -77,7 +77,7 @@ class Instagram
     public static function getMedia($token){
 
         $accessToken = $token ?? Self::getAccessToken();
-        $userURL = 'https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&access_token='. $accessToken;
+        $userURL = 'https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption,timestamp&limit=5&access_token='. $accessToken;
         $json = Curl::curl_get($userURL);
 
         return $json;
@@ -85,7 +85,7 @@ class Instagram
 
     public static function getMediaPage($token, $pageToken, $direction = 'after'){
         $accessToken = $token ?? Self::getAccessToken();
-        $mediaURL = 'https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=25&'. $direction .'='. $pageToken .'&access_token='. $accessToken;
+        $mediaURL = 'https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption,timestamp&limit=5&'. $direction .'='. $pageToken .'&access_token='. $accessToken;
         $json = Curl::curl_get($mediaURL);
 
         return $json;

@@ -47,6 +47,7 @@ Instagram (code: {{ request()->input('code') }}):
 <div><a href='./api/photos/instagram/me?token={{ request()->input('token') }}'>Me</a></div>
 <div>Media</div>
 <div><a href='./api/photos/instagram/media?token={{ request()->input('token') }}'>Media</a></div>
+<div><a href='./api/photos/fake/instagram/media?token={{ request()->input('token') }}'>Media (Fake)</a></div>
 <div><a href='./api/photos/instagram/media/next/{{ request()->input('pagetokennext') }}?token={{ request()->input('token') }}'>Media Next</a></div>
 <div><a href='./api/photos/instagram/media/previous/{{ request()->input('pagetokenprevious') }}?token={{ request()->input('token') }}'>Media Previous</a></div>
 <div>Image</div>

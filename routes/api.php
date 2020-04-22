@@ -40,4 +40,11 @@ Route::group(['prefix' => 'photos'], function () {
     Route::get('/instagram/media/next/{pageToken}', ['as' => 'api.instagram.media.next', 'uses' => 'PhotoController@mediaNextPage']);
     Route::get('/instagram/media/previous/{pageToken}', ['as' => 'api.instagram.media.previous', 'uses' => 'PhotoController@mediaPreviousPage']);
     Route::get('/instagram/image/{imageid}', ['as' => 'api.instagram.image', 'uses' => 'PhotoController@image']);
+
+    Route::get('/fake/instagram/{item}', function () {
+        return view('json.media');
+    });
+    Route::get('/fake/instagram/media/next/{item}', function () {
+        return view('json.medianext');
+    });
 });
